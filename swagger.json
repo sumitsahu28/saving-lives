@@ -1,0 +1,482 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Saving Lives App"
+    },
+    "host": "localhost:3000/",
+    "consumes": [
+      "application/json",
+      "application/x-www-form-urlencoded",
+      "multipart/form-data"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "tags": [
+      {
+        "name": "User",
+        "description": "User API's"
+      },
+      {
+        "name": "Hospital",
+        "description": "Hospital API's"
+      },
+      {
+        "name": "Miscellaneous",
+        "description": "Miscellaneous API's"
+      }
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "paths": {
+      "/api/user/signup":{
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "summary": "To let user signup",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name": "name",
+                "in": "formData",
+                "description": "Enter user full name",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "Enter user email Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "phone",
+                "in": "formData",
+                "description": "Enter user mobile number",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "gender",
+                "in": "formData",
+                "description": "Enter user gender",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "dob",
+                "in": "formData",
+                "description": "Enter user date of birth as DD/MM/YYYY",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "bloodGroup",
+                "in": "formData",
+                "description": "Enter user blood group A+/B+/AB+/D+",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "lastDonated",
+                "in": "formData",
+                "description": "Enter date when user last donated blood",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "address",
+                "in": "formData",
+                "description": "Enter user residential address",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "city",
+                "in": "formData",
+                "description": "Enter user city",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "state",
+                "in": "formData",
+                "description": "Enter user state",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "pincode",
+                "in": "formData",
+                "description": "Enter user area pincode",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "password",
+                "in": "formData",
+                "description": "Enter user password",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "confirmPassword",
+                "in": "formData",
+                "description": "Enter user confirm password",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/user/login":{
+        "post": {
+          "tags": [
+            "User"
+          ],
+          "summary": "To let user login",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "Enter user email Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "password",
+                "in": "formData",
+                "description": "Enter user password",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/user/profile":{
+        "get": {
+          "tags": [
+            "User"
+          ],
+          "summary": "To let user see profile information",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name": "authorization",
+                "in": "header",
+                "description": "Enter user auth token",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/hospital/signup":{
+        "post": {
+          "tags": [
+            "Hospital"
+          ],
+          "summary": "Hospital signup",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name": "hospitalId",
+                "in": "formData",
+                "description": "Enter hospital Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "name",
+                "in": "formData",
+                "description": "Enter hospital full name",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "Enter hospital email Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "phone",
+                "in": "formData",
+                "description": "Enter hospital mobile number",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "address",
+                "in": "formData",
+                "description": "Enter hospital residential address",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "city",
+                "in": "formData",
+                "description": "Enter hospital city",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "state",
+                "in": "formData",
+                "description": "Enter hospital state",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "pincode",
+                "in": "formData",
+                "description": "Enter hospital area pincode",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "password",
+                "in": "formData",
+                "description": "Enter hospital password",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "confirmPassword",
+                "in": "formData",
+                "description": "Enter hospital confirm password",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/hospital/login":{
+        "post": {
+          "tags": [
+            "Hospital"
+          ],
+          "summary": "Hospital login",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name": "hospitalId",
+                "in": "formData",
+                "description": "Enter hospital Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "Enter hospital email Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "password",
+                "in": "formData",
+                "description": "Enter password",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/hospital/profile":{
+        "get": {
+          "tags": [
+            "Hospital"
+          ],
+          "summary": "Hospital profile information",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name": "authorization",
+                "in": "header",
+                "description": "Enter hospital auth token",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/miscellaneous/volunteer":{
+        "post": {
+          "tags": [
+            "Miscellaneous"
+          ],
+          "summary": "Volunteer query post",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name": "name",
+                "in": "formData",
+                "description": "Enter volunteer name",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "Enter volunteer email Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "message",
+                "in": "formData",
+                "description": "Enter volunteer message",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/api/miscellaneous/visitor":{
+        "post": {
+          "tags": [
+            "Miscellaneous"
+          ],
+          "summary": "Visitors query post",
+          "description": "",
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+              {
+                "name": "firstName",
+                "in": "formData",
+                "description": "Enter visitor first name",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "lastName",
+                "in": "formData",
+                "description": "Enter visitor last name",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "description": "Enter visitor email Id",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "phone",
+                "in": "formData",
+                "description": "Enter visitor contact number",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "message",
+                "in": "formData",
+                "description": "Enter visitor message",
+                "required": true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      }
+    },
+    "externalDocs": {
+      "description": "Find out more about Swagger",
+      "url": "http://swagger.io"
+    }
+  }
